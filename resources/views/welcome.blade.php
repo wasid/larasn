@@ -10,15 +10,15 @@
             <h3>Sign Up</h3>
             <form action="#" method="post">
                 <div class="form-group">
-                    <label for="email">Your E-Mail</label>
+                    <label for="email">Your E-Mail:</label>
                     <input class="form-control" type="text" name="email" id="email" value="">
                 </div>
                 <div class="form-group">
-                    <label for="first_name">Your First Name</label>
+                    <label for="first_name">Your First Name:</label>
                     <input class="form-control" type="text" name="first_name" id="first_name" value="">
                 </div>
                 <div class="form-group">
-                    <label for="password">Your Password</label>
+                    <label for="password">Your Password:</label>
                     <input class="form-control" type="password" name="password" id="password" value="">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,11 +28,11 @@
             <h3>Sign In</h3>
             <form action="#" method="post">
                 <div class="form-group">
-                    <label for="email">Your E-Mail</label>
+                    <label for="email">Your E-Mail:</label>
                     <input class="form-control" type="text" name="email" id="email" value="">
                 </div>
                 <div class="form-group">
-                    <label for="password">Your Password</label>
+                    <label for="password">Your Password:</label>
                     <input class="form-control" type="password" name="password" id="password" value="">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
