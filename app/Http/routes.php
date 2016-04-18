@@ -44,6 +44,28 @@ Route::group(['middleware' => ['web']], function () {
     	
     	]);
 
+    Route::get('/logout', [
+        
+        'uses'=> 'UserController@getLogout',
+        'as' => 'logout'
+        
+        ]);
+
+    Route::get('/account', [
+    'uses' => 'UserController@getAccount',
+    'as' => 'account'
+    ]);
+
+    Route::post('/upateaccount', [
+        'uses' => 'UserController@postSaveAccount',
+        'as' => 'account.save'
+    ]);
+
+    Route::get('/userimage/{filename}', [
+        'uses' => 'UserController@getUserImage',
+        'as' => 'account.image'
+    ]);
+
     Route::get('/dashboard', [
     	
     	'uses'=> 'PostController@getDashboard',
@@ -57,10 +79,16 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'create',
         'middleware' => 'auth'
         ]);
+    
+    Route::post('/edit', [
+        'uses' => 'PostController@postEditPost',
+        'as' => 'edit'
+    ]);
+
     Route::get('/deletepost/{post_id}', [
 
-    'uses' => 'PostController@getDeletePost',
-    'as' => 'delete',
-    'middleware' => 'auth'
-    ]);
+        'uses' => 'PostController@getDeletePost',
+        'as' => 'delete',
+        'middleware' => 'auth'
+        ]);
 });
