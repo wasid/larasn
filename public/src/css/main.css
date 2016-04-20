@@ -20,7 +20,8 @@
 }
 
 .error,
-.success {
+.success,
+.fail {
     text-align: center;
 }
 

@@ -91,4 +91,9 @@ Route::group(['middleware' => ['web']], function () {
         'as' => 'delete',
         'middleware' => 'auth'
         ]);
+
+    Route::post('/like', [
+    'uses' => 'PostController@postLikePost',
+    'as' => 'like'
+    ]);
 });

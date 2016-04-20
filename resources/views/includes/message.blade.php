@@ -16,3 +16,8 @@
         </div>
     </div>
 @endif
+@if(Session::has('fail'))
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 alert alert-danger fail">{{ Session::get('fail') }}</div>
+</div>
+@endif

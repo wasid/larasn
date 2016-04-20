@@ -44,7 +44,7 @@ class UserController extends Controller
 		if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
             return redirect()->route('dashboard')->with(['message' => 'Welcome Back!']);
         }
-        return redirect()->back();
+        return redirect()->back()->with(['fail' => 'You are providing wrong email or password!']);
 	}
 
 	public function getLogout()
@@ -82,12 +82,15 @@ class UserController extends Controller
         if ($update && $old_filename !== $filename) {
             Storage::delete($old_filename);
         }
-        return redirect()->route('account')->with(['message' => 'your Account info is updated!']);
+        return redirect()->route('account')->with(['message' => 'Profile successfully updated!']);
+       
     }
     
     public function getUserImage($filename)
     {
         $file = Storage::disk('local')->get($filename);
         return new Response($file, 200);
+        //->with(['message' => 'Profile successfully updated!']);
+       //return Response::json(['message' => 'Success', 'message_class' => 'alert alert-success fade in']);
     }
 }
